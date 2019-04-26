@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 // Get the Middle Character
 //https://www.codewars.com/kata/get-the-middle-character/train/javascript

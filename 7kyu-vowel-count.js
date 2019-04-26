@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 // Vowel Count
 // https://www.codewars.com/kata/vowel-count/train/javascript

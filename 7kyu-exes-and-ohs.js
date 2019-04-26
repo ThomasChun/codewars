@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 // Exes and Ohs - 7 Kyu
 // https://www.codewars.com/kata/55908aad6620c066bc00002a/solutions/javascript

@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 // Catching Car Mileage Numbers
 // https://www.codewars.com/kata/catching-car-mileage-numbers/train/javascript

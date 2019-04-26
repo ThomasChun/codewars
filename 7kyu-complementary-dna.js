@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 // Complementary DNA
 // https://www.codewars.com/kata/complementary-dna/train/javascript

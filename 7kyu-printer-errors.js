@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 // Printer Errors
 // https://www.codewars.com/kata/printer-errors/train/javascript

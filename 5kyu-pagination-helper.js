@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 // PaginationHelper
 // https://www.codewars.com/kata/paginationhelper/train/javascript

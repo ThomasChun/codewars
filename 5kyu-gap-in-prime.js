@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 // Gap in Primes
 // https://www.codewars.com/kata/gap-in-primes/train/javascript

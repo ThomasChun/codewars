@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 // Is a number prime?
 // https://www.codewars.com/trainer/javascript

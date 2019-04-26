@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 // Triple trouble
 // https://www.codewars.com/kata/triple-trouble-1/javascript

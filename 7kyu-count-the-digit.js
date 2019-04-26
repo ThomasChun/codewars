@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 // Count the Digit - 7 Kyu
 // https://www.codewars.com/kata/count-the-digit/train/javascript

@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 // Moving Zeros To The End
 // https://www.codewars.com/kata/moving-zeros-to-the-end/train/javascript

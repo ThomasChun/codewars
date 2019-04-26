@@ -1,5 +1,5 @@
 'use strict';
-
+ 
 // Sum String as Numbers
 // https://www.codewars.com/kata/sum-strings-as-numbers/train/javascript
 

@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 // Rot13
 // https://www.codewars.com/kata/rot13-1/train/javascript

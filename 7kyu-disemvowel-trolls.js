@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 // Disemvowel Trolls
 // https://www.codewars.com/kata/disemvowel-trolls/train/javascript

@@ -1,4 +1,4 @@
-'use strict';
+'use strict'; 
 
 // Find the missing letter - 6 Kyu
 // https://www.codewars.com/kata/find-the-missing-letter/train/javascript
