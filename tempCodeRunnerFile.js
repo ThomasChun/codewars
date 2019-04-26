@@ -1,3 +1,5 @@
-
-// console.log(nextBigger(414),'441'); // 441
-// console.log(nextBigger(144),'414'); // 414
+ // if (length % 2 === 0) {
+  //   return s.charAt(length/2-1) + '' + s.charAt((length/2));
+  // } else {
+  //   return s.charAt(Math.floor(length/2));
+  // }
