@@ -46,46 +46,79 @@ function isInteresting(number, awesomePhrases) {
     let num = (number + i).toString().split('');
     let numLength = num.length;
     let firstDigit = num[0];
-    let sequential = true;
-    let sequentialDecrementing = true;
-    console.log(num);
-    
-    // TEST 1: Any digit followed by all zeros: 100, 90000
-    // TEST 2: Every digit is the same number: 1111
-    // TEST 3: The digits are sequential, incementing†: 1234
-    // TEST 4: The digits are sequential, decrementing‡: 4321
-    // TEST 5: The digits are a palindrome: 1221 or 73837
-    // TEST 6: The digits match one of the values in the awesomePhrases array
-    // TEST 7: † For incrementing sequences, 0 should come after 9, and not before 1, as in 7890.
-    // TEST 8: ‡ For decrementing sequences, 0 should come after 1, and not before 9, as in 3210.
+    let palindrome = true;
+    let awesomePhrasesMatch = false;
+    let incrementingSequence = false;
+    let decrementSequence = false;
 
-    // Tests for conditions of TEST 3 & TEST 4
-    for (let i = 0; i < numLength-1; i++) {
-      if (parseInt(num[i]) + 1 !== parseInt(num[i+1])) {
-        sequential = false;
-      }
-      if (parseInt(num[i]) - 1 !== parseInt(num[i+1])) {
-        sequentialDecrementing = false;
+    // TEST 5: The digits are a palindrome: 1221 or 73837
+    if (numLength < 3) {
+      palindrome = false;
+    }
+    for (let i = 0; i < Math.floor(numLength / 2); i++) {
+      if (parseInt(num[i]) !== parseInt(num[numLength - 1 - i] || numLength < 3)) {
+        palindrome = false;
       }
     }
-
-    // TEST 1
+    // TEST 6: The digits match one of the values in the awesomePhrases array
+    if (awesomePhrases.length !== 0) {
+      for (let i = 0; i < awesomePhrases.length; i++) {
+        if (number + counter === awesomePhrases[i]) {
+          awesomePhrasesMatch = true;
+        }
+      }
+    }
+    // TEST 3: The digits are sequential, incementing†: 1234
+    // TEST 4: The digits are sequential, decrementing‡: 4321
+    // TEST 7: † For incrementing sequences, 0 should come after 9, and not before 1, as in 7890.
+    // TEST 8: ‡ For decrementing sequences, 0 should come after 1, and not before 9, as in 3210.
+    let incSeqCount = 0;
+    let decSeqCount = 0;
+    if (number > 99) {
+      for (let i = 0; i < numLength - 1; i++) {
+        if (parseInt(num[i]) + 1 === parseInt(num[i + 1])) {
+          // condition that makes sure 0 never comes before 1
+          if (num[i] === '0' && num[i + 1] === '1') {
+            incSeqCount--;
+          } else {
+            incSeqCount++;
+          }
+        } else if (parseInt(num[i]) - 1 === parseInt(num[i + 1])) {
+          if (num[i] === '0' && num[i + 1] === '9') {
+            decSeqCount--;
+          } else {
+            decSeqCount++;
+          }
+        } else {
+          if (num[i] === '9' && num[i + 1] === '0') {
+            incSeqCount++;
+          } else if ((num[i] === '1' && num[i + 1] === '0')) {
+            decSeqCount++;
+          } else {
+            incSeqCount--;
+          }
+        }
+      }
+      if (incSeqCount === numLength - 1) {
+        incrementingSequence = true;
+      }
+      
+      if (decSeqCount === numLength - 1) {
+        decrementSequence = true;
+      }
+    }
+    // TEST 1: Any digit followed by all zeros: 100, 90000
     if (num.filter(num => num !== '0').length === 1) {
-      console.log('Passed test 1');
       return counter === 0 ? 2 : 1;
-    // TEST 2
+      // TEST 2: Every digit is the same number: 1111
     } else if (number > 99 && num.filter(num => num === firstDigit).length === numLength) {
-      console.log('Passed test 2');
       return counter === 0 ? 2 : 1;
-    // TEST 3 & 4
-    } else if (sequential || sequentialDecrementing) {
-      console.log('Passed test 3 or 4');
+      // TEST 3, 4, 5, 6, 7, 8
+    } else if (palindrome || awesomePhrasesMatch || incrementingSequence || decrementSequence) {
       return counter === 0 ? 2 : 1;
     } else { // If no tests pass increment counter and test next two numbers
       counter++;
     }
-    
-    console.log('end of test 1 counter', counter);
   }
   // If no tests pass for all 3 numbers return 0
   return 0;
@@ -94,20 +127,20 @@ function isInteresting(number, awesomePhrases) {
 // So, you should expect these inputs and outputs:
 
 // my tests
-console.log(isInteresting(4318, [])); // 0
+console.log(isInteresting(99, [])); // 0
 
-// "boring" numbers
-// isInteresting(3, [1337, 256]);    // 0
-// isInteresting(3236, [1337, 256]); // 0
+// // "boring" numbers
+// console.log(isInteresting(3, [1337, 256]));    // 0
+// console.log(isInteresting(3236, [1337, 256])); // 0
 
-// progress as we near an "interesting" number
-// isInteresting(11207, []); // 0
-// isInteresting(11208, []); // 0
-// isInteresting(11209, []); // 1
-// isInteresting(11210, []); // 1
-// isInteresting(11211, []); // 2
+// // progress as we near an "interesting" number
+// console.log(isInteresting(11207, [])); // 0
+// console.log(isInteresting(11208, [])); // 0
+// console.log(isInteresting(11209, [])); // 1
+// console.log(isInteresting(11210, [])); // 1
+// console.log(isInteresting(11211, [])); // 2
 
-// nearing a provided "awesome phrase"
-// isInteresting(1335, [1337, 256]); // 1
-// isInteresting(1336, [1337, 256]); // 1
-// isInteresting(1337, [1337, 256]); // 2
+// // nearing a provided "awesome phrase"
+// console.log(isInteresting(1335, [1337, 256])); // 1
+// console.log(isInteresting(1336, [1337, 256])); // 1
+// console.log(isInteresting(1337, [1337, 256])); // 2
