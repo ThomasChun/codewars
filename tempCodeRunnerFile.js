@@ -1,3 +1,4 @@
+Write a function called repeatStr which repeats the given string string exactly n times.
 
-console.log(persistence(25), '2');
-console.log(persistence(999), '4');
+// repeatStr(6, "I") // "IIIIII"
+// repeatStr(5, "Hello") // "HelloHelloHelloHelloHello"
