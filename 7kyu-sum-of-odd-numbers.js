@@ -29,20 +29,3 @@ console.log(rowSumOddNumbers(1), 1);
 console.log(rowSumOddNumbers(2), 8);
 console.log(rowSumOddNumbers(3), 27);
 console.log(rowSumOddNumbers(42), 74088);
-
-// function rowSumOddNumbers(n) {
-//   let totalNums = 0;
-//   let sum = 0;
-//   let numArr = [];
-//   for (let i = 1; i <= n; i++) {
-//     totalNums += i;
-//   }
-//   for (let i = 1; totalNums > 0; i += 2) {
-//     numArr.unshift(i);
-//     totalNums--;
-//   }
-//   for (let i = 0; i < n; i++) {
-//     sum += numArr[i];
-//   }
-//   return sum;
-// }
